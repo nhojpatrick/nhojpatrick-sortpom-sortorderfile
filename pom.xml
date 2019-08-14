@@ -29,6 +29,18 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>com.github.ekryd.sortpom</groupId>
+					<artifactId>sortpom-maven-plugin</artifactId>
+					<version>2.10.0</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.github.nhojpatrick.sortpom</groupId>
+							<artifactId>nhojpatrick-sortpom-sortorderfile</artifactId>
+							<version>1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
@@ -185,6 +197,26 @@
 	</build>
 	<!--profiles / -->
 	<profiles>
+		<profile>
+			<id>sortpom</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.github.ekryd.sortpom</groupId>
+						<artifactId>sortpom-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sortpom-sort</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>sort</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<id>versions</id>
 			<build>
