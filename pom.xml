@@ -159,6 +159,7 @@
 					<version>2.7</version>
 					<configuration>
 						<generateBackupPoms>false</generateBackupPoms>
+						<rulesUri>file:///${session.executionRootDirectory}/src/main/resources/com/github/nhojpatrick/versions/ruleset/rules.xml</rulesUri>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -221,6 +222,14 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>com/github/nhojpatrick/versions**</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 	<!--profiles / -->
 	<profiles>
