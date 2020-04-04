@@ -59,6 +59,11 @@
 					<version>${plugins.github.ekryd.sortpom-maven-plugin}</version>
 				</plugin>
 				<plugin>
+					<groupId>io.takari</groupId>
+					<artifactId>maven</artifactId>
+					<version>${plugins.takari.maven}</version>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
@@ -298,7 +303,6 @@
 					<plugin>
 						<groupId>io.takari</groupId>
 						<artifactId>maven</artifactId>
-						<version>0.7.7</version>
 						<executions>
 							<execution>
 								<id>wrapper-latest</id>
@@ -312,6 +316,8 @@
 				</plugins>
 			</build>
 			<properties>
+				<downloadJavadocs>false</downloadJavadocs>
+				<downloadSources>false</downloadSources>
 				<sort.skip>true</sort.skip>
 			</properties>
 		</profile>
@@ -352,6 +358,7 @@
 		<generateBackupPoms>false</generateBackupPoms>
 		<!-- plugin versions -->
 		<plugins.github.ekryd.sortpom-maven-plugin>2.11.0</plugins.github.ekryd.sortpom-maven-plugin>
+		<plugins.takari.maven>0.7.7</plugins.takari.maven>
 		<!-- JPMS -->
 		<project.Automatic-Module-Name>com.github.nhojpatrick.sortpom.sortorderfile</project.Automatic-Module-Name>
 	</properties>
